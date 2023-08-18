@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDOApp</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="icons">
+        <img src="images/moon-black.svg" alt="toggle-theme" id="moon" />
+        <img src="images/coffe-black.svg" alt="delete-tasks" id="coffee" />
+      </div>
+      <div>
+        <h1>Today</h1>
+        <h2>Tomorrow</h2>
+      </div>
+    </header>
+    <div class="task-input">
+      <p class="empty-task">Can't add an empty task</p>
+      <input type="text" placeholder="Add a new task" class="light" />
+    </div>
+
+    <div class="container">
+      <ul id="list">
+        <% if(tasks.length>0){ for(let task of tasks){ %>
+        <li <% if(task.isComplete){%>
+          class="complete" <% } %> ><%=task.taskName %>
+        </li>
+        <% }} %>
+      </ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
